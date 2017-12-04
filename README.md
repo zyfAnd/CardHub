@@ -9,14 +9,14 @@ Installation
 ====
 ```groovy
 dependencies {
-    compile 'com.loopeer.library:cardstack:1.0.2'
+    compile 'com.citi.ci.library:cardhub:1.0.2'
 }
 ```
 
 Usages
 ====
 ```xml
-<com.loopeer.cardstack.CardStackView
+<com.citi.ci.carhub.CardStackView
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 ```

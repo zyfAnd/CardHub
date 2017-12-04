@@ -3,7 +3,7 @@ Show something like cards with 3 kinds of animations(alldown, updown, updownstac
 
 Screenshot
 ====
-![](/screenshot/screenshot1.gif) ![](/screenshot/screenshot2.gif) ![](/screenshot/screenshot3.gif)   
+![](/screenshot/cardhub.gif) 
 
 Installation
 ====

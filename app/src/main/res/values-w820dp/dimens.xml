@@ -5,4 +5,12 @@
     <dimen name="regards_type_choose_size">13dp</dimen>
     <dimen name="regards_type_image_size">48dp</dimen>
     <dimen name="regards_text_size">12sp</dimen>
+
+    <dimen name="PaddingLeft">10dip</dimen>
+    <dimen name="PaddingTop">20dip</dimen>
+    <dimen name="PaddingRigh">15dip</dimen>
+    <dimen name="PaddingBottomt">10dip</dimen>
+    <dimen name="HriontalPaddingTop">5dip</dimen>
+    <dimen name="VerticalSpacing">5dip</dimen>
+    <dimen name="Hri_VerticalSpacing">1dip</dimen>
 </resources>

@@ -1,6 +1,7 @@
 package com.citi.ci.cardhub.view;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * zhangyanfu
+ */
 
 public class DetailActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     //定义图标数组
@@ -55,6 +59,7 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     public ImageView cardImgae;
 //    public GridView gridView;
     DragGridView mDragGridView;
+    private Dialog chooseDialog;
     public int pos;
 
     @Override

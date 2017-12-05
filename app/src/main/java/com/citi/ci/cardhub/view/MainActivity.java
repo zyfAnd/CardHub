@@ -8,12 +8,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.citi.cardstack.AllMoveDownAnimatorAdapter;
 import com.citi.cardstack.CardStackView;
 import com.citi.ci.cardhub.R;
 import com.citi.ci.cardhub.adapter.TestStackAdapter;
 
 import java.util.Arrays;
 
+/**
+ * zhangyanfu
+ */
 public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener {
     public static Integer[] TEST_DATAS = new Integer[]{
             R.color.color_1,
@@ -114,17 +118,18 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.menu_all_down:
+        switch (item.getItemId()) {
+            case R.id.add_image:
 //                mStackView.setAnimatorAdapter(new AllMoveDownAnimatorAdapter(mStackView));
-//                break;
+
+                break;
 //            case R.id.menu_up_down:
 //                mStackView.setAnimatorAdapter(new UpDownAnimatorAdapter(mStackView));
 //                break;
 //            case R.id.menu_up_down_stack:
 //                mStackView.setAnimatorAdapter(new UpDownStackAnimatorAdapter(mStackView));
 //                break;
-//        }
+        }
         return super.onOptionsItemSelected(item);
     }
 

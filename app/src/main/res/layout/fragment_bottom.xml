@@ -27,7 +27,7 @@
                 android:background="@color/regard_image_bkg"
                 android:contentDescription="@null"
                 android:padding="6dp"
-                android:src="@drawable/regards_100_coins"/>
+                android:src="@drawable/alipay"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                 android:background="@color/regard_image_bkg"
                 android:contentDescription="@null"
                 android:padding="6dp"
-                android:src="@drawable/regards_2_yuan"/>
+                android:src="@drawable/alipay"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -119,7 +119,7 @@
                 android:background="@color/regard_image_bkg"
                 android:contentDescription="@null"
                 android:padding="6dp"
-                android:src="@drawable/regards_8_yuan"/>
+                android:src="@drawable/alipay"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -165,7 +165,7 @@
                 android:background="@color/regard_image_bkg"
                 android:contentDescription="@null"
                 android:padding="6dp"
-                android:src="@drawable/regards_12_yuan"/>
+                android:src="@drawable/alipay"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"

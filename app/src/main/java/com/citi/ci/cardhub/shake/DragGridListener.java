@@ -1,5 +1,8 @@
 package com.citi.ci.cardhub.shake;
 
+/**
+ * zhangyanfu
+ */
 public interface DragGridListener {
 	/**
 	 * 重新排列数据

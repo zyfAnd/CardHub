@@ -2,16 +2,21 @@ package com.citi.ci.cardhub.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.citi.cardstack.AllMoveDownAnimatorAdapter;
 import com.citi.cardstack.CardStackView;
 import com.citi.ci.cardhub.R;
 import com.citi.ci.cardhub.adapter.TestStackAdapter;
+import com.orhanobut.logger.Logger;
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.util.Arrays;
 
@@ -19,6 +24,7 @@ import java.util.Arrays;
  * zhangyanfu
  */
 public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener {
+    public final static int SCANNING_REQUEST_CODE = 1;
     public static Integer[] TEST_DATAS = new Integer[]{
             R.color.color_1,
             R.color.color_2,
@@ -120,8 +126,12 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_image:
+                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+                startActivityForResult(intent, SCANNING_REQUEST_CODE);
 //                mStackView.setAnimatorAdapter(new AllMoveDownAnimatorAdapter(mStackView));
-
+//                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivityForResult(intent, SCANNING_REQUEST_CODE);
                 break;
 //            case R.id.menu_up_down:
 //                mStackView.setAnimatorAdapter(new UpDownAnimatorAdapter(mStackView));
@@ -144,6 +154,42 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     @Override
     public void onItemExpend(boolean expend) {
         mActionButtonContainer.setVisibility(expend ? View.VISIBLE : View.GONE);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        switch (requestCode) {
+//            case SCANNING_REQUEST_CODE:
+//                if (resultCode == RESULT_OK) {
+//                    final Bundle bundle = data.getExtras();
+//                    Handler handler = new Handler(Looper.getMainLooper());
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Logger.e("scan ------message-----");
+//                            Toast.makeText(MainActivity.this,bundle.getString("result"),Toast.LENGTH_LONG).show();
+////                            textView.setText(bundle.getString("result"));
+//                        }
+//                    });
+//                }
+//                break;
+//            default:
+//                break;
+//        }
+        if (requestCode == SCANNING_REQUEST_CODE) {
+            //处理扫描结果（在界面上显示）
+            if (null != data) {
+                Bundle bundle = data.getExtras();
+                if (bundle == null) {
+                    return;
+                }
+                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+                    Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+                    Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 }
 

@@ -20,10 +20,14 @@ import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import java.util.Arrays;
 
+import io.card.payment.CardIOActivity;
+import io.card.payment.CreditCard;
+
 /**
  * zhangyanfu
  */
 public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener {
+    public final static int REQUEST_AUTOTEST = 2;
     public final static int SCANNING_REQUEST_CODE = 1;
     public static Integer[] TEST_DATAS = new Integer[]{
             R.color.color_1,
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
             R.color.color_26
     };
     public static Integer[] TEST_DATAS_temp = new Integer[]{
-            R.drawable.one,
+            R.drawable.three,
             R.drawable.two,
             R.drawable.three,
             R.drawable.four,
@@ -91,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
         setContentView(R.layout.activity_main);
 
         mStackView = (CardStackView) findViewById(R.id.stackview_main);
-        mActionButtonContainer = (LinearLayout) findViewById(R.id.button_container);
+//        mActionButtonContainer = (LinearLayout) findViewById(R.id.button_container);
         mStackView.setItemExpendListener(this);
         mTestStackAdapter = new TestStackAdapter(this);
         mStackView.setAdapter(mTestStackAdapter);
@@ -126,12 +130,14 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_image:
-                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
-                startActivityForResult(intent, SCANNING_REQUEST_CODE);
+//                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+//                startActivityForResult(intent, SCANNING_REQUEST_CODE);
 //                mStackView.setAnimatorAdapter(new AllMoveDownAnimatorAdapter(mStackView));
 //                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
 //                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //                startActivityForResult(intent, SCANNING_REQUEST_CODE);
+
+                scan();
                 break;
 //            case R.id.menu_up_down:
 //                mStackView.setAnimatorAdapter(new UpDownAnimatorAdapter(mStackView));
@@ -153,43 +159,70 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
 
     @Override
     public void onItemExpend(boolean expend) {
-        mActionButtonContainer.setVisibility(expend ? View.VISIBLE : View.GONE);
+//        mActionButtonContainer.setVisibility(expend ? View.VISIBLE : View.GONE);
+    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+////        switch (requestCode) {
+////            case SCANNING_REQUEST_CODE:
+////                if (resultCode == RESULT_OK) {
+////                    final Bundle bundle = data.getExtras();
+////                    Handler handler = new Handler(Looper.getMainLooper());
+////                    handler.post(new Runnable() {
+////                        @Override
+////                        public void run() {
+////                            Logger.e("scan ------message-----");
+////                            Toast.makeText(MainActivity.this,bundle.getString("result"),Toast.LENGTH_LONG).show();
+//////                            textView.setText(bundle.getString("result"));
+////                        }
+////                    });
+////                }
+////                break;
+////            default:
+////                break;
+////        }
+//        if (requestCode == SCANNING_REQUEST_CODE) {
+//            //处理扫描结果（在界面上显示）
+//            if (null != data) {
+//                Bundle bundle = data.getExtras();
+//                if (bundle == null) {
+//                    return;
+//                }
+//                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
+//                    String result = bundle.getString(CodeUtils.RESULT_STRING);
+//                    Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
+//                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
+//                    Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        }
+//    }
+    public void scan() {
+        Intent intent = new Intent(this, CardIOActivity.class)
+                .putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, false)
+                .putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false)
+                .putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, true)//去除水印
+                .putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, true)//去除键盘
+                .putExtra(CardIOActivity.EXTRA_LANGUAGE_OR_LOCALE, "zh-Hans")//设置提示为中文
+                .putExtra("debug_autoAcceptResult", true);
+        startActivityForResult(intent, REQUEST_AUTOTEST);
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        switch (requestCode) {
-//            case SCANNING_REQUEST_CODE:
-//                if (resultCode == RESULT_OK) {
-//                    final Bundle bundle = data.getExtras();
-//                    Handler handler = new Handler(Looper.getMainLooper());
-//                    handler.post(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            Logger.e("scan ------message-----");
-//                            Toast.makeText(MainActivity.this,bundle.getString("result"),Toast.LENGTH_LONG).show();
-////                            textView.setText(bundle.getString("result"));
-//                        }
-//                    });
-//                }
-//                break;
-//            default:
-//                break;
-//        }
-        if (requestCode == SCANNING_REQUEST_CODE) {
-            //处理扫描结果（在界面上显示）
-            if (null != data) {
-                Bundle bundle = data.getExtras();
-                if (bundle == null) {
-                    return;
-                }
-                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
-                    String result = bundle.getString(CodeUtils.RESULT_STRING);
-                    Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
-                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
-                    Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
-                }
+        super.onActivityResult(requestCode, resultCode, data);
+        String outStr = new String();
+        if ((requestCode == REQUEST_AUTOTEST) && data != null
+                && data.hasExtra(CardIOActivity.EXTRA_SCAN_RESULT)) {
+            CreditCard result = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
+            if (result != null) {
+                outStr += "Card number: " + result.cardNumber + "\n";
             }
         }
+//        tv_num.setText(outStr);
+        Toast.makeText(this,"获取到银行卡信息"+outStr,Toast.LENGTH_LONG).show();
     }
+
+
 }
 

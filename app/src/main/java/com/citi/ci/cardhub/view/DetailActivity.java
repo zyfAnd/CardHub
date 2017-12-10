@@ -160,7 +160,7 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
                     dataSourceList.add(itemHashMap);
                     break;
                 case 7:
-                    itemHashMap.put("item_image",R.drawable.add_app);
+                    itemHashMap.put("item_image",R.drawable.ic_addpic);
                     dataSourceList.add(itemHashMap);
                     break;
             }
@@ -225,5 +225,8 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
 
         }
 //        Toast.makeText(DetailActivity.this, name[position], Toast.LENGTH_LONG).show();
+    }
+    public void backToHome(View view){
+        DetailActivity.this.finish();
     }
 }

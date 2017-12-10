@@ -53,7 +53,7 @@ public class TestStackAdapter extends StackAdapter<Integer> {
             h.onBind(data, position);
             Logger.e("position====="+position);
             if(onItemClickListener!=null){
-                ((ColorItemViewHolder) holder).mLayout.setOnClickListener(new View.OnClickListener() {
+                ((ColorItemViewHolder) holder).imageCard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         onItemClickListener.onItemClick(v,position);
@@ -95,14 +95,15 @@ public class TestStackAdapter extends StackAdapter<Integer> {
         View mLayout;
         View mContainerContent;
         TextView mTextTitle;
-//        ImageView imageCard;
+        ImageView imageCard;
 
         public ColorItemViewHolder(View view) {
             super(view);
-            mLayout = view.findViewById(R.id.frame_list_card_item);
-            mContainerContent = view.findViewById(R.id.container_list_content);
+//            mLayout = view.findViewById(R.id.frame_list_card_item);
+//            mContainerContent = view.findViewById(R.id.container_list_content);
+
 //            mTextTitle = (TextView) view.findViewById(R.id.text_list_card_title);
-//            imageCard = (ImageView) view.findViewById(R.id.image_card);
+            imageCard = (ImageView) view.findViewById(R.id.show_card_image);
         }
 
         @Override
@@ -113,10 +114,11 @@ public class TestStackAdapter extends StackAdapter<Integer> {
 
 
         public void onBind(Integer data, int position) {
-            mLayout.setBackgroundResource(data);
+//            mLayout.setBackgroundResource(data);
 //            mLayout.getBackground().setColorFilter(ContextCompat.getColor(getContext(), data), PorterDuff.Mode.SRC_IN);
 //            mTextTitle.setText(String.valueOf(position));
 //            imageCard.setImageResource(imageData[position]);
+            imageCard.setImageResource(data);
 
         }
 

@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     tools:context="com.citi.ci.cardhub.view.DetailActivity">
 
-    <ImageView
+    <com.lqm.roundview.RoundImageView
         android:id="@+id/card_image"
         android:layout_width="wrap_content"
+        android:layout_margin="10dp"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:onClick="backToHome"
+        android:layout_weight="2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +34,7 @@
         android:id="@+id/dragGridView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:cacheColorHint="@android:color/transparent"
         android:gravity="center"
         android:horizontalSpacing="10dip"

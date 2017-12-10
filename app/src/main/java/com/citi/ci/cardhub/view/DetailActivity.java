@@ -126,37 +126,37 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
             switch (i){
                 case 0:
                     itemHashMap.put("item_image",R.drawable.alipay);
-                    itemHashMap.put("item_text", "AliPay");
+                    itemHashMap.put("item_text", "支付宝");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 1:
                     itemHashMap.put("item_image",R.drawable.app1);
-                    itemHashMap.put("item_text", "app1");
+                    itemHashMap.put("item_text", "网易云音乐");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 2:
                     itemHashMap.put("item_image",R.drawable.app2);
-                    itemHashMap.put("item_text", "app2");
+                    itemHashMap.put("item_text", "猫眼看电影");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 3:
                     itemHashMap.put("item_image",R.drawable.app3);
-                    itemHashMap.put("item_text", "app3");
+                    itemHashMap.put("item_text", "去哪儿");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 4:
                     itemHashMap.put("item_image",R.drawable.app4);
-                    itemHashMap.put("item_text", "app4");
+                    itemHashMap.put("item_text", "美团");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 5:
                     itemHashMap.put("item_image",R.drawable.app5);
-                    itemHashMap.put("item_text", "app5");
+                    itemHashMap.put("item_text", "摩拜单车");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 6:
                     itemHashMap.put("item_image",R.drawable.app6);
-                    itemHashMap.put("item_text", "app6");
+                    itemHashMap.put("item_text", "大众点评");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 7:

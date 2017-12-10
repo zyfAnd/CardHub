@@ -3,7 +3,7 @@ Show something like cards with 3 kinds of animations. Two ways to scroll the ite
 
 Screenshot
 ====
-![](/screenshot/cardhub.gif) 
+![](/screenshot/cardhub.gif) ![](/screenshot/scan.gif) 
 
 Installation
 ====

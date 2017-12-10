@@ -50,7 +50,7 @@ import java.util.List;
 public class DragGridView extends GridView implements OnClickListener {
 
 	/** 默认列数 */
-	public static final int DEFAULT_COLUMN = 3;
+	public static final int DEFAULT_COLUMN = 4;
 	/** 行和行之间的间隔，列和列之间的间隔 */
 	public static final int UI_SPACING = 1;
 	/** 列数 */

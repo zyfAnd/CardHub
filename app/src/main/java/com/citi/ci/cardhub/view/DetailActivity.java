@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import com.citi.ci.cardhub.R;
 import com.citi.ci.cardhub.adapter.DragAdapter;
 import com.citi.ci.cardhub.shake.DragGridView;
+import com.citi.ci.cardhub.utils.PopupMenuUtil;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -32,10 +35,10 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     //定义图标数组
     private int[] imageRes = {
             R.drawable.alipay,
-            R.drawable.alipay,
-            R.drawable.alipay,
-            R.drawable.alipay,
-            R.drawable.alipay,
+            R.drawable.app1,
+            R.drawable.app2,
+            R.drawable.app3,
+            R.drawable.app4,
             R.drawable.ic_addpic
     };
 
@@ -54,7 +57,7 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     /**
      * 一页可见提条目数
      */
-    private static final int VISIBIY_NUMS = 6;
+    private static final int VISIBIY_NUMS = 8;
     private DragAdapter mDragAdapter;
     public ImageView cardImgae;
 //    public GridView gridView;
@@ -100,7 +103,6 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
                 break;
         }
 
-        for (int i = 0; i < VISIBIY_NUMS; i++) {
             HashMap<String, Object> itemHashMap = new HashMap<String, Object>();
             Random random =new Random();
 
@@ -109,15 +111,65 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
 //                itemHashMap.put("item_image",R.drawable.alipay);
 //            }
 //
-            if (i+1== VISIBIY_NUMS) {
-                itemHashMap.put("item_image",R.drawable.ic_addpic);
-            }
+//            if (i+1== VISIBIY_NUMS) {
+//                itemHashMap.put("item_image",R.drawable.ic_addpic);
+//            }
 //
-            else {
-                itemHashMap.put("item_image",R.drawable.alipay);
+//            else {
+//                itemHashMap.put("item_image",R.drawable.alipay);
+//                itemHashMap.put("item_text", "AliPay");
+//                dataSourceList.add(itemHashMap);
+//            }
+
+        for(int i=0;i<VISIBIY_NUMS;i++){
+            itemHashMap = new HashMap<>();
+            switch (i){
+                case 0:
+                    itemHashMap.put("item_image",R.drawable.alipay);
+                    itemHashMap.put("item_text", "AliPay");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 1:
+                    itemHashMap.put("item_image",R.drawable.app1);
+                    itemHashMap.put("item_text", "app1");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 2:
+                    itemHashMap.put("item_image",R.drawable.app2);
+                    itemHashMap.put("item_text", "app2");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 3:
+                    itemHashMap.put("item_image",R.drawable.app3);
+                    itemHashMap.put("item_text", "app3");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 4:
+                    itemHashMap.put("item_image",R.drawable.app4);
+                    itemHashMap.put("item_text", "app4");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 5:
+                    itemHashMap.put("item_image",R.drawable.app5);
+                    itemHashMap.put("item_text", "app5");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 6:
+                    itemHashMap.put("item_image",R.drawable.app6);
+                    itemHashMap.put("item_text", "app6");
+                    dataSourceList.add(itemHashMap);
+                    break;
+                case 7:
+                    itemHashMap.put("item_image",R.drawable.add_app);
+                    dataSourceList.add(itemHashMap);
+                    break;
             }
-            itemHashMap.put("item_text", "AliPay");
-            dataSourceList.add(itemHashMap);
+
+        }
+
+
+
+
 //            itemHashMap.put("item_text", "eBay" );
 //            dataSourceList.add(itemHashMap);
 //            itemHashMap.put("item_text", "Amazon" );
@@ -126,7 +178,8 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
 //            dataSourceList.add(itemHashMap);
 //            itemHashMap.put("item_text", "WeChat");
 //            dataSourceList.add(itemHashMap);
-        }
+
+
         mDragAdapter = new DragAdapter(this, dataSourceList);
 
         mDragGridView.setAdapter(mDragAdapter);
@@ -161,12 +214,16 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if (position == 5) {
+        if (position == 7) {
             Logger.e("position-----add---" + position);
-            FragmentManager fm = getSupportFragmentManager();
-            BottomDialogFragment editNameDialog = new BottomDialogFragment();
-            editNameDialog.show(fm, "fragment_bottom_dialog");
+//            FragmentManager fm = getSupportFragmentManager();
+//            BottomDialogFragment editNameDialog = new BottomDialogFragment();
+//            editNameDialog.show(fm, "fragment_bottom_dialog");
+
+            PopupMenuUtil.getInstance()._show(this,view);
+
+
         }
-        Toast.makeText(DetailActivity.this, name[position], Toast.LENGTH_LONG).show();
+//        Toast.makeText(DetailActivity.this, name[position], Toast.LENGTH_LONG).show();
     }
 }

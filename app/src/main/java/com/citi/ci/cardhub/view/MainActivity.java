@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
             R.color.color_26
     };
     public static Integer[] TEST_DATAS_temp = new Integer[]{
-            R.drawable.three,
-            R.drawable.two,
+            R.drawable.citi01,
+            R.drawable.citi02,
             R.drawable.three,
             R.drawable.four,
             R.drawable.five,
@@ -216,11 +216,18 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
                 && data.hasExtra(CardIOActivity.EXTRA_SCAN_RESULT)) {
             CreditCard result = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
             if (result != null) {
-                outStr += "Card number: " + result.cardNumber + "\n";
+                outStr  = result.cardNumber ;
             }
         }
 //        tv_num.setText(outStr);
         Toast.makeText(this,"获取到银行卡信息"+outStr,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(MainActivity.this,CardInfoActivity.class);
+        if(outStr==null&&outStr.equals(""))
+        {
+            outStr = "8912 5420 0100 5231";
+        }
+        intent.putExtra("card_num",outStr);
+        startActivity(intent);
     }
 
 

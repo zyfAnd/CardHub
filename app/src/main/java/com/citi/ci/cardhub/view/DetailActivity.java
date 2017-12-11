@@ -20,6 +20,7 @@ import com.citi.ci.cardhub.R;
 import com.citi.ci.cardhub.adapter.DragAdapter;
 import com.citi.ci.cardhub.shake.DragGridView;
 import com.citi.ci.cardhub.utils.PopupMenuUtil;
+import com.citi.ci.cardhub.utils.StatusbarColorUtils;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -69,6 +70,7 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
         intiViews();
         mDragGridView.setOnItemClickListener(this);
         Intent intent = getIntent();
@@ -87,10 +89,10 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     private void initData() {
         switch (pos % 5) {
             case 0:
-                cardImgae.setImageResource(R.drawable.one);
+                cardImgae.setImageResource(R.drawable.citi01);
                 break;
             case 1:
-                cardImgae.setImageResource(R.drawable.two);
+                cardImgae.setImageResource(R.drawable.citi02);
                 break;
             case 2:
                 cardImgae.setImageResource(R.drawable.three);

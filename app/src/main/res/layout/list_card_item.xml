@@ -19,7 +19,7 @@
         android:layout_width="350dp"
         android:layout_height="160dp"
         android:layout_gravity="center"
-        android:background="@drawable/two">
+        >
 
         <!--<ImageView-->
             <!--android:id="@+id/image_card"-->

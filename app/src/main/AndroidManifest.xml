@@ -6,13 +6,10 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
-
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -49,6 +46,10 @@
         </activity>
         <activity android:name=".view.DetailActivity" />
         <activity android:name="com.uuzuche.lib_zxing.activity.CaptureActivity" />
+        <activity android:name=".view.CardInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+        </activity>
     </application>
 
 </manifest>

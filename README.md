@@ -9,7 +9,7 @@ Installation
 ====
 ```groovy
 dependencies {
-    compile 'com.citi.ci.library:cardhub:1.0.2'
+    compile 'com.citi.ci.library:cardhub:1.0.3'
 }
 ```
 

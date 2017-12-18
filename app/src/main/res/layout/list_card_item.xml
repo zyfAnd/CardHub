@@ -7,12 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:stackHeaderHeight="160dp">
+    app:stackHeaderHeight="130dp"
 
-    <com.lqm.roundview.RoundImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    >
+    <!--app:stackHeaderHeight="160dp"-->
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
         android:id="@+id/show_card_image"
+        android:scaleType="fitXY"
         />
     <FrameLayout
         android:id="@+id/frame_list_card_item"

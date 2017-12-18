@@ -11,6 +11,16 @@
         android:paddingRight="12dp"
         android:paddingTop="12dp"/>
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/trigger_payment"
+        android:onClick="triggerPayment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center"
+        android:src="@drawable/down_arrow"
+        android:layout_margin="16dp"
+   />
+
     <!--<LinearLayout-->
         <!--android:id="@+id/button_container"-->
         <!--android:layout_width="wrap_content"-->

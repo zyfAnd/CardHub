@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.citi.ci.cardhub.view.AddAppActivity">
     <com.lqm.roundview.RoundImageView
+        android:id="@+id/add_card_detail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add_card_detail"/>
-    <View
         android:layout_margin="10dp"
+        android:layout_height="0dp"
+        android:onClick="backToHome"
+        android:src="@drawable/citi01"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#d1cfcf"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="0.5dp"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <View
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:background="#d1cfcf"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="0.5dp"/>
+        <ImageView
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/add_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_gravity="center"
+            android:text="Cick + and add application"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -16,9 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @blog http://blog.csdn.net/sk719887916
- * 
- * @author liuyongkui
+ *
+ * @author zhangyanfu
  *
  */
 public class DragAdapter extends BaseAdapter implements DragGridListener {
@@ -94,8 +93,6 @@ public class DragAdapter extends BaseAdapter implements DragGridListener {
 		list.remove(deletePosition);
 		notifyDataSetChanged();
 	}
-
-	
 
 
 }

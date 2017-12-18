@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.citi.cardstack.CardStackView;
 import com.citi.cardstack.StackAdapter;
 import com.citi.ci.cardhub.R;
+import com.lqm.roundview.RoundImageView;
 import com.orhanobut.logger.Logger;
 
 import android.content.Context;
@@ -195,8 +196,5 @@ public class MyStackAdapter extends com.citi.cardstack.StackAdapter<Integer> {
 
     public  interface OnItemClickListener{
         void onItemClick(View view, int position);
-
     }
-
-
 }

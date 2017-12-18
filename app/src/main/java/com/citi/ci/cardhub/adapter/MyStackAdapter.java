@@ -25,16 +25,16 @@ import com.orhanobut.logger.Logger;
 /**
  * zhangyanfu
  */
-public class TestStackAdapter extends StackAdapter<Integer> {
+public class MyStackAdapter extends com.citi.cardstack.StackAdapter<Integer> {
 
     private OnItemClickListener onItemClickListener;
     public void setOnItemCilckListener(OnItemClickListener onItemCilckListener){
         this.onItemClickListener = onItemCilckListener;
     }
 
-//    Logger log = Logger.getLogger("=====TestStackAdapter=======");
+//    Logger log = Logger.getLogger("=====MyStackAdapter=======");
 
-    public TestStackAdapter(Context context) {
+    public MyStackAdapter(Context context) {
         super(context);
     }
 

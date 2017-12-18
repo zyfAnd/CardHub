@@ -2,7 +2,6 @@ package com.citi.ci.cardhub.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +9,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.citi.cardstack.AllMoveDownAnimatorAdapter;
 import com.citi.cardstack.CardStackView;
 import com.citi.ci.cardhub.R;
-import com.citi.ci.cardhub.adapter.TestStackAdapter;
-import com.orhanobut.logger.Logger;
-import com.uuzuche.lib_zxing.activity.CaptureActivity;
-import com.uuzuche.lib_zxing.activity.CodeUtils;
+import com.citi.ci.cardhub.adapter.MyStackAdapter;
 
 import java.util.Arrays;
 
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     };
     private CardStackView mStackView;
     private LinearLayout mActionButtonContainer;
-    private TestStackAdapter mTestStackAdapter;
+    private MyStackAdapter mTestStackAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
         mStackView = (CardStackView) findViewById(R.id.stackview_main);
 //        mActionButtonContainer = (LinearLayout) findViewById(R.id.button_container);
         mStackView.setItemExpendListener(this);
-        mTestStackAdapter = new TestStackAdapter(this);
+        mTestStackAdapter = new MyStackAdapter(this);
         mStackView.setAdapter(mTestStackAdapter);
 
 
@@ -110,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
                 }
                 , 200
         );
-        mTestStackAdapter.setOnItemCilckListener(new TestStackAdapter.OnItemClickListener() {
+        mTestStackAdapter.setOnItemCilckListener(new MyStackAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);

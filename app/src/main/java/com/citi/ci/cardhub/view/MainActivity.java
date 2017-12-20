@@ -1,17 +1,27 @@
 package com.citi.ci.cardhub.view;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.citi.cardstack.CardStackView;
 import com.citi.ci.cardhub.R;
 import com.citi.ci.cardhub.adapter.MyStackAdapter;
+import com.citi.ci.cardhub.utils.StatusbarColorUtils;
 
 import java.util.Arrays;
 
@@ -24,6 +34,8 @@ import io.card.payment.CreditCard;
 public class MainActivity extends AppCompatActivity implements CardStackView.ItemExpendListener {
     public final static int REQUEST_AUTOTEST = 2;
     public final static int SCANNING_REQUEST_CODE = 1;
+    private Dialog chooseDialog;
+    private View inflate;
     public static Integer[] TEST_DATAS = new Integer[]{
             R.color.color_1,
             R.color.color_2,
@@ -87,6 +99,13 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StatusbarColorUtils.setStatusBarDarkIcon(this, true);
+        if (Build.VERSION.SDK_INT >= 21) {
+            View decorview = getWindow().getDecorView();
+            decorview.setSystemUiVisibility
+                    (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
         setContentView(R.layout.activity_main);
 
         mStackView = (CardStackView) findViewById(R.id.stackview_main);
@@ -225,6 +244,38 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
         startActivity(intent);
     }
 
+    public void triggerPayment(View view){
+        show();
+    }
 
+    private void show(){
+        chooseDialog = new Dialog(this,R.style.ActionSheetDialogStyle);
+        //填充对话框的布局
+        inflate = LayoutInflater.from(this).inflate(R.layout.repayment_dialog, null);
+        //将布局设置给Dialog
+        chooseDialog.setContentView(inflate);
+        //获取当前Activity所在的窗体
+        Window dialogWindow = chooseDialog.getWindow();
+        //设置Dialog从窗体底部弹出
+        dialogWindow.setGravity( Gravity.BOTTOM);
+        //获得窗体的属性
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.y = 20;//设置Dialog距离底部的距离
+//       将属性设置给窗体
+        dialogWindow.setAttributes(lp);
+        chooseDialog.show();//显示对话框
+    }
+    public void repayment(View view){
+
+        startActivity(new Intent(MainActivity.this,PayActivity.class));
+        chooseDialog.dismiss();
+    }
+    public void backToList(View view){
+        chooseDialog.dismiss();
+    }
+
+    public void addCard(View view){
+        scan();
+    }
 }
 

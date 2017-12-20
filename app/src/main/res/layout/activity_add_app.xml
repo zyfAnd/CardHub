@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="30dp"
     tools:context="com.citi.ci.cardhub.view.AddAppActivity">
     <com.lqm.roundview.RoundImageView
         android:id="@+id/add_card_detail"
@@ -22,7 +23,7 @@
         android:layout_height="0dp"
         android:layout_weight="2">
         <View
-            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:background="#d1cfcf"
             android:layout_marginLeft="20dp"
@@ -31,16 +32,15 @@
         <ImageView
             android:layout_margin="20dp"
             android:layout_gravity="center"
-            android:src="@drawable/add_app"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/add_card_line"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            android:layout_gravity="center"
             android:text="Cick + and add application"
             />
-
     </LinearLayout>
 
 </LinearLayout>

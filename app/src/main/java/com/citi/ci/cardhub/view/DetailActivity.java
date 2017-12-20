@@ -3,6 +3,8 @@ package com.citi.ci.cardhub.view;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -69,6 +71,13 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StatusbarColorUtils.setStatusBarDarkIcon(this, true);
+        if (Build.VERSION.SDK_INT >= 21) {
+            View decorview = getWindow().getDecorView();
+            decorview.setSystemUiVisibility
+                    (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
         setContentView(R.layout.activity_detail);
 
         intiViews();
@@ -128,37 +137,44 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
             switch (i){
                 case 0:
                     itemHashMap.put("item_image",R.drawable.alipay);
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     itemHashMap.put("item_text", "支付宝");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 1:
                     itemHashMap.put("item_image",R.drawable.app1);
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     itemHashMap.put("item_text", "网易云音乐");
                     dataSourceList.add(itemHashMap);
                     break;
                 case 2:
                     itemHashMap.put("item_image",R.drawable.app2);
                     itemHashMap.put("item_text", "猫眼看电影");
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     dataSourceList.add(itemHashMap);
                     break;
                 case 3:
                     itemHashMap.put("item_image",R.drawable.app3);
                     itemHashMap.put("item_text", "去哪儿");
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     dataSourceList.add(itemHashMap);
                     break;
                 case 4:
                     itemHashMap.put("item_image",R.drawable.app4);
                     itemHashMap.put("item_text", "美团");
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     dataSourceList.add(itemHashMap);
                     break;
                 case 5:
                     itemHashMap.put("item_image",R.drawable.app5);
                     itemHashMap.put("item_text", "摩拜单车");
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     dataSourceList.add(itemHashMap);
                     break;
                 case 6:
                     itemHashMap.put("item_image",R.drawable.app6);
                     itemHashMap.put("item_text", "大众点评");
+                    itemHashMap.put("choose_image",R.drawable.regards_choose);
                     dataSourceList.add(itemHashMap);
                     break;
                 case 7:
@@ -230,5 +246,8 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     }
     public void backToHome(View view){
         DetailActivity.this.finish();
+    }
+    public void pay(View view){
+//        startActivity(new Intent(DetailActivity.this,PayActivity.class));
     }
 }

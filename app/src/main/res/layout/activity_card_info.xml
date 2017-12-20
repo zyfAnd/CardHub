@@ -8,11 +8,13 @@
     android:layout_marginTop="20dp"
     tools:context="com.citi.ci.cardhub.view.CardInfoActivity">
     <ImageView
+        android:layout_margin="10dp"
         android:onClick="backHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_chevron_left"/>
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/arrow_left_card_info"/>
     <TextView
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Card Detail Information"
@@ -72,6 +74,7 @@
         android:id="@+id/confirm"
         android:onClick="confirm"
         android:text="OK"
+        android:textColor="#FFFFFF"
         android:layout_gravity="end"
         android:shadowColor="@color/colorPrimary"
         android:background="@drawable/btn_shpe"

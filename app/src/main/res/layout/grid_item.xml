@@ -14,15 +14,30 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20dp" />
-        <ImageView
-            android:id="@+id/item_image"
-            android:layout_width="40dip"
-            android:layout_height="40dip"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/deft_show"
-            android:scaleType="centerCrop" >
-        </ImageView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/deft_show"
+                android:scaleType="centerCrop" >
+            </ImageView>
+            <ImageView
+                android:id="@+id/select_choose"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@id/item_image"
+                android:contentDescription="@null"
+                android:src="@drawable/regards_choose"/>
+        </RelativeLayout>
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="10dp" />

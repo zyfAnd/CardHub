@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.citi.ci.cardhub.R;
+import com.citi.ci.cardhub.utils.PopupMenuUtil;
 import com.citi.ci.cardhub.utils.StatusbarColorUtils;
 import com.lqm.roundview.RoundImageView;
 
@@ -28,6 +29,9 @@ public class AddAppActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         setContentView(R.layout.activity_add_app);
+    }
+    public void addApps(View view){
+        PopupMenuUtil.getInstance()._show(this,view);
     }
 
 

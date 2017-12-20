@@ -30,6 +30,7 @@
             android:layout_marginRight="20dp"
             android:layout_height="0.5dp"/>
         <ImageView
+            android:onClick="addApps"
             android:layout_margin="20dp"
             android:layout_gravity="center"
             android:src="@drawable/add_card_line"

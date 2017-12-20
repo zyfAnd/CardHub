@@ -46,5 +46,6 @@ public class CardInfoActivity extends AppCompatActivity {
     public void backHome(View view) {
 //        Intent intent = new Intent(CardInfoActivity.class,);
 //        startActivity();
+        CardInfoActivity.this.finish();
     }
 }

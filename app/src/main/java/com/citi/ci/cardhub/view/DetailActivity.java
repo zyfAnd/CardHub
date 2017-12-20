@@ -98,19 +98,19 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     private void initData() {
         switch (pos % 5) {
             case 0:
-                cardImgae.setImageResource(R.drawable.citi01);
+                cardImgae.setImageResource(R.drawable.card_02);
                 break;
             case 1:
-                cardImgae.setImageResource(R.drawable.citi02);
+                cardImgae.setImageResource(R.drawable.card_01);
                 break;
             case 2:
-                cardImgae.setImageResource(R.drawable.three);
+                cardImgae.setImageResource(R.drawable.card_03);
                 break;
             case 3:
-                cardImgae.setImageResource(R.drawable.four);
+                cardImgae.setImageResource(R.drawable.card_04);
                 break;
             case 4:
-                cardImgae.setImageResource(R.drawable.five);
+                cardImgae.setImageResource(R.drawable.card_05);
                 break;
         }
 

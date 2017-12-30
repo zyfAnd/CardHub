@@ -9,17 +9,26 @@
     <RelativeLayout
         android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <ImageView
             android:layout_marginLeft="20dp"
+            android:id="@+id/updateInfo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/tvPersonInfo"
+            android:onClick="updateInfo"
+            android:src="@drawable/updatemessage" />
+        <TextView
+            android:gravity="center_horizontal"
             android:textStyle="bold"
             android:textColor="#000000"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Card Hub" />
+            android:text="CardHub"
+            android:layout_alignParentTop="true" />
 
         <ImageView
             android:onClick="addCard"

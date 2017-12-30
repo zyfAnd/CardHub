@@ -277,5 +277,9 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     public void addCard(View view){
         scan();
     }
+
+    public void updateInfo(View view){
+        startActivity(new Intent(MainActivity.this,PersonInfoActivity.class));
+    }
 }
 

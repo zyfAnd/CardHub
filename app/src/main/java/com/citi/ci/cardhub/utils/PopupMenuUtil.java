@@ -15,10 +15,6 @@ import android.widget.Toast;
 import com.citi.ci.cardhub.R;
 
 
-/**
- * Created by mj
- * on 2016/10/28.
- */
 public class PopupMenuUtil {
 
     private static final String TAG = "PopupMenuUtil";

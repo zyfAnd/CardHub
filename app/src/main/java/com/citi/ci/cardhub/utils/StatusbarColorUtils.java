@@ -11,7 +11,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by wangchende on 15-9-7.
  */
 public class StatusbarColorUtils {
     private static Method mSetStatusBarColorIcon;

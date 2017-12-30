@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context="com.citi.ci.cardhub.view.PayActivity">
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/payBack"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+           android:layout_alignBottom="@+id/tvRepayment"
+            android:onClick="backHome"
+
+            android:src="@drawable/arrow_left_card_info" />
+
+        <TextView
+            android:id="@+id/tvRepayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/payBack"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="Repayment"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_pay" />
+
+            <include layout="@layout/item_pay_pink" />
+
+            <include layout="@layout/item_pay_blue" />
+
+            <include layout="@layout/item_pay_green" />
+        </LinearLayout>
+
+        <!--<include layout="@layout/item_pay_green"/>-->
+        <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/payRecyclerView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--</android.support.v7.widget.RecyclerView>-->
+        <!--<Button-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:background="@drawable/card_shape"-->
+        <!--/>-->
+        <!--<Button-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:background="@drawable/card_shape_pink"-->
+        <!--/>-->
+        <!--<Button-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:background="@drawable/card_shape_blue"-->
+        <!--/>-->
+        <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:background="@drawable/card_shape_green"-->
+        <!--/>-->
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/srl_root"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <!--android:background="@color/colorPrimary"-->
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Total amount to repay this month "
+                android:textColor="#717171"
+                android:textSize="16sp" />
+
+            <com.citi.ci.cardhub.view.NumberRunningTextView
+                android:layout_below="@+id/total"
+                android:id="@+id/tv_money"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0.00"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:runWhenChange="false" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <!--android:background="@android:color/holo_red_light"-->
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Total Amount Card Hub Paid for You"
+                android:textColor="#717171"
+                android:textSize="16sp" />
+
+            <com.citi.ci.cardhub.view.NumberRunningTextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/amount"
+
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:text="0.00"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:runWhenChange="false" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_shpe"
+            android:gravity="center"
+            android:onClick="pay"
+            android:shadowColor="#438fff"
+            android:text="Repayment"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

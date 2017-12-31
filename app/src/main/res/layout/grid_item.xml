@@ -30,11 +30,10 @@
                 android:id="@+id/select_choose"
                 android:layout_width="13dp"
                 android:layout_height="13dp"
-                android:layout_centerVertical="true"
                 android:layout_marginLeft="2dp"
                 android:layout_toRightOf="@id/item_image"
                 android:contentDescription="@null"
-                android:src="@drawable/regards_choose"/>
+                android:src="@drawable/regards_choose_pay"/>
         </RelativeLayout>
 
 

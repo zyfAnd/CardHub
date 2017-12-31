@@ -32,7 +32,9 @@ public class PopupMenuUtil {
 
     private RelativeLayout rlClick;
     private ImageView ivBtn;
-    private LinearLayout llTest1, llTest2, llTest3, llTest4, llTest5, llTest6, llTest7, llTest8;
+    private LinearLayout llTest2, llTest3, llTest4, llTest5, llTest6, llTest7, llTest8;
+    private LinearLayout llTest1;
+    private ImageView ivAliPay,ivWangYi,ivMaoYan,ivQuNaer,ivMeiTuan,ivMobileBike,ivDaZong,ivWeChat;
 
     /**
      * 动画执行的 属性值数组
@@ -101,6 +103,16 @@ public class PopupMenuUtil {
         llTest7 = (LinearLayout) rootVew.findViewById(R.id.test7);
         llTest8 = (LinearLayout) rootVew.findViewById(R.id.test8);
 
+        ivAliPay = (ImageView) rootVew.findViewById(R.id.ivAliPay);
+        ivWangYi = (ImageView) rootVew.findViewById(R.id.ivWangYi);
+        ivMaoYan = (ImageView) rootVew.findViewById(R.id.ivMaoYan);
+        ivQuNaer = (ImageView) rootVew.findViewById(R.id.ivQuNaer);
+        ivMeiTuan = (ImageView) rootVew.findViewById(R.id.ivMeiTuan);
+        ivMobileBike = (ImageView) rootVew.findViewById(R.id.ivMobileBike);
+        ivDaZong = (ImageView) rootVew.findViewById(R.id.ivDaZong);
+        ivWeChat = (ImageView) rootVew.findViewById(R.id.ivWeChat);
+
+
         rlClick.setOnClickListener(new MViewClick(0, context));
 
         llTest1.setOnClickListener(new MViewClick(1, context));
@@ -133,6 +145,23 @@ public class PopupMenuUtil {
                 //加号按钮点击之后的执行
                 _rlClickAction();
             } else {
+                if (index==1){
+                    ivAliPay.setEnabled(false);
+                }else if(index==2){
+                    ivWangYi.setEnabled(false);
+                }else if(index==3){
+                    ivMaoYan.setEnabled(false);
+                }else if(index==4){
+                    ivQuNaer.setEnabled(false);
+                }else if(index==5){
+                    ivMeiTuan.setEnabled(false);
+                }else if(index==6){
+                    ivMobileBike.setEnabled(false);
+                }else if(index==7){
+                    ivDaZong.setEnabled(false);
+                }else if(index==8){
+                    ivWeChat.setEnabled(false);
+                }
                 showToast(context, "index=" + index);
             }
         }
@@ -267,5 +296,11 @@ public class PopupMenuUtil {
         anim.start();
     }
 
+    private void showChooseIcon(int index){
+        for (int i=1;i<=8;i++){
+
+        }
+
+    }
 
 }

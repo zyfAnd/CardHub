@@ -53,11 +53,20 @@ public class DragAdapter extends BaseAdapter implements DragGridListener {
 		convertView = mInflater.inflate(R.layout.grid_item, null);
 		ImageView mImageView = (ImageView) convertView.findViewById(R.id.item_image);
 		TextView mTextView = (TextView) convertView.findViewById(R.id.item_text);
-//		ImageView chooseImage = (ImageView) convertView.findViewById(R.id.select_choose);
+		final ImageView chooseImage = (ImageView) convertView.findViewById(R.id.select_choose);
 		
 		mImageView.setImageResource((Integer) list.get(position).get("item_image"));
 		mTextView.setText((CharSequence) list.get(position).get("item_text"));
 //		chooseImage.setImageResource((Integer) list.get(position).get("choose_image"));
+		if(position!=7){
+			mImageView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					chooseImage.setEnabled(false);
+				}
+			});
+		}
+
 		if(position == mHidePosition){
 			convertView.setVisibility(View.INVISIBLE);
 		}

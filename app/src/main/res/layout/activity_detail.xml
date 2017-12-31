@@ -15,12 +15,24 @@
         android:layout_height="0dp"
         android:onClick="backToHome"
         android:layout_weight="2" />
-
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="Bound" />
+        android:layout_height="wrap_content">
+        <View
+            android:layout_marginLeft="20dp"
+            android:id="@+id/boundIncon"
+            android:layout_marginTop="5dp"
+            android:layout_width="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#438fff"
+            android:layout_height="18dp"/>
+        <TextView
+            android:layout_toRightOf="@+id/boundIncon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Bound" />
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -45,17 +57,18 @@
         android:verticalSpacing="15dip" >
     </com.citi.ci.cardhub.shake.DragGridView>
 
-    <Button
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/confirm"
+    <TextView
+        android:layout_marginBottom="20dp"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_shpe"
+        android:gravity="center"
         android:onClick="pay"
+        android:shadowColor="#438fff"
         android:text="Pay"
         android:textColor="#FFFFFF"
-        android:layout_gravity="center"
-        android:shadowColor="#438fff"
-        android:background="@drawable/btn_shpe"
-        />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

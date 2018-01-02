@@ -27,4 +27,8 @@ public class BoundingCardActivity extends AppCompatActivity {
     public void backHome(View view){
         BoundingCardActivity.this.finish();
     }
+
+    public void ensure(View view){
+        BoundingCardActivity.this.finish();
+    }
 }

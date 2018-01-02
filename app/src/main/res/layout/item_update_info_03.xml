@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/card_shape_green"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/card_shape_blue"
     android:layout_margin="2dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -11,12 +11,13 @@
         android:layout_margin="10dp"
         android:src="@drawable/citi_logo"
         android:id="@+id/cardLogo"
+        android:background="@drawable/circle_btn_shape"
         android:layout_width="50dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp" />
     <TextView
         android:textColor="#FFFFFF"
         android:layout_margin="10dp"
-        android:text="HSBC Bank"
+        android:text="Bank of American"
         android:layout_toRightOf="@+id/cardLogo"
         android:id="@+id/bankName"
         android:layout_width="wrap_content"
@@ -28,15 +29,6 @@
         android:layout_below="@+id/bankName"
         android:layout_toRightOf="@+id/cardLogo"
         android:id="@+id/cardType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:textColor="#FFFFFF"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/cardType"
-        android:text="Debt: $230.00"
-        android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

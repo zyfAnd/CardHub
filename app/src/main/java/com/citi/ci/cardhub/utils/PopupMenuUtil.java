@@ -31,7 +31,7 @@ public class PopupMenuUtil {
     private PopupWindow popupWindow;
 
     private RelativeLayout rlClick;
-    private ImageView ivBtn;
+//    private ImageView ivBtn;
     private LinearLayout llTest2, llTest3, llTest4, llTest5, llTest6, llTest7, llTest8;
     private LinearLayout llTest1;
     private ImageView ivAliPay,ivWangYi,ivMaoYan,ivQuNaer,ivMeiTuan,ivMobileBike,ivDaZong,ivWeChat;
@@ -93,7 +93,7 @@ public class PopupMenuUtil {
      */
     private void initLayout(Context context) {
         rlClick = (RelativeLayout) rootVew.findViewById(R.id.pop_rl_click);
-        ivBtn = (ImageView) rootVew.findViewById(R.id.pop_iv_img);
+//        ivBtn = (ImageView) rootVew.findViewById(R.id.pop_iv_img);
         llTest1 = (LinearLayout) rootVew.findViewById(R.id.test1);
         llTest2 = (LinearLayout) rootVew.findViewById(R.id.test2);
         llTest3 = (LinearLayout) rootVew.findViewById(R.id.test3);
@@ -188,9 +188,9 @@ public class PopupMenuUtil {
      * 刚打开popupWindow 执行的动画
      */
     private void _openPopupWindowAction() {
-        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ivBtn, "rotation", 0f, 135f);
-        objectAnimator.setDuration(200);
-        objectAnimator.start();
+//        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ivBtn, "rotation", 0f, 135f);
+//        objectAnimator.setDuration(200);
+//        objectAnimator.start();
 
         _startAnimation(llTest1, 500, animatorProperty);
         _startAnimation(llTest2, 430, animatorProperty);
@@ -208,11 +208,11 @@ public class PopupMenuUtil {
      * 关闭 popupWindow执行的动画
      */
     public void _rlClickAction() {
-        if (ivBtn != null && rlClick != null) {
-
-            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ivBtn, "rotation", 135f, 0f);
-            objectAnimator.setDuration(300);
-            objectAnimator.start();
+//        if (ivBtn != null && rlClick != null) {
+//
+//            ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(ivBtn, "rotation", 135f, 0f);
+//            objectAnimator.setDuration(300);
+//            objectAnimator.start();
 
             _closeAnimation(llTest1, 300, top);
             _closeAnimation(llTest2, 200, top);
@@ -230,7 +230,7 @@ public class PopupMenuUtil {
                 }
             }, 300);
 
-        }
+//        }
     }
 
 

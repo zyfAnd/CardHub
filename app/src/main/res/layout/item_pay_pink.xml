@@ -36,6 +36,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/cardType"
         android:text="Debt: $20000.0"
+        android:layout_marginRight="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </RelativeLayout>

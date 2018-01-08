@@ -8,9 +8,8 @@
 
     <com.lqm.roundview.RoundImageView
         app:type="circle"
-
         android:layout_margin="10dp"
-        android:src="@drawable/logo_one"
+        android:src="@drawable/hsbc_logo_03"
         android:id="@+id/cardLogo"
         android:layout_width="50dp"
         android:layout_height="50dp"/>

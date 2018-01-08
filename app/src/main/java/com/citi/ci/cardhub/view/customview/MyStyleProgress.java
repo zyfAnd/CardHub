@@ -1,4 +1,4 @@
-package com.citi.ci.cardhub.view;
+package com.citi.ci.cardhub.view.customview;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;

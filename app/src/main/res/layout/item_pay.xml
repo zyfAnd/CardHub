@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:src="@drawable/logo_one"
+        android:src="@drawable/citi_logo"
         android:layout_margin="10dp"
         android:id="@+id/cardLogo"
         android:layout_width="50dp"
@@ -15,7 +15,7 @@
     <TextView
         android:textColor="#FFFFFF"
         android:layout_margin="10dp"
-        android:text="Standard Character Bank"
+        android:text="CITI Bank"
         android:layout_toRightOf="@+id/cardLogo"
         android:id="@+id/bankName"
         android:layout_width="wrap_content"

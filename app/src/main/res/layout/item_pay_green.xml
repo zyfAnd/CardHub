@@ -9,7 +9,7 @@
     <com.lqm.roundview.RoundImageView
         app:type="circle"
         android:layout_margin="10dp"
-        android:src="@drawable/citi_logo"
+        android:src="@drawable/icbc_logo"
         android:id="@+id/cardLogo"
         android:background="@drawable/circle_btn_shape"
         android:layout_width="50dp"
@@ -17,7 +17,7 @@
     <TextView
         android:textColor="#FFFFFF"
         android:layout_margin="10dp"
-        android:text="Bank of American"
+        android:text="ICBC Bank "
         android:layout_toRightOf="@+id/cardLogo"
         android:id="@+id/bankName"
         android:layout_width="wrap_content"

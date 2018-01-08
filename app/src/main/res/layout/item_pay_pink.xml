@@ -9,14 +9,14 @@
     <com.lqm.roundview.RoundImageView
         app:type="circle"
         android:layout_margin="10dp"
-        android:src="@drawable/citi_logo"
+        android:src="@drawable/spd_logo"
         android:id="@+id/cardLogo"
         android:layout_width="50dp"
         android:layout_height="50dp" />
     <TextView
         android:textColor="#FFFFFF"
         android:layout_margin="10dp"
-        android:text="GuangDa Bank"
+        android:text="SPD Bank"
         android:layout_toRightOf="@+id/cardLogo"
         android:id="@+id/bankName"
         android:layout_width="wrap_content"

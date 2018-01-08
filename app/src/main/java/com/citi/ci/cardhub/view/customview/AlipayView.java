@@ -1,4 +1,4 @@
-package com.citi.ci.cardhub.view;
+package com.citi.ci.cardhub.view.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,8 +11,8 @@ import android.view.View;
 
 import com.citi.ci.cardhub.R;
 
-import static com.citi.ci.cardhub.view.AlipayView.State.FINISH;
-import static com.citi.ci.cardhub.view.AlipayView.State.IDLE;
+import static com.citi.ci.cardhub.view.customview.AlipayView.State.FINISH;
+import static com.citi.ci.cardhub.view.customview.AlipayView.State.IDLE;
 
 /**
  * @Author Zhang Yanfu

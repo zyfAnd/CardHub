@@ -33,6 +33,4 @@ public class AddAppActivity extends AppCompatActivity {
     public void addApps(View view){
         PopupMenuUtil.getInstance()._show(this,view);
     }
-
-
 }

@@ -8,6 +8,8 @@ import android.os.Build;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -35,6 +37,8 @@ import java.util.Random;
  */
 
 public class DetailActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    private Dialog payDialog;
+    private View inflate;
     //定义图标数组
     private int[] imageRes = {
             R.drawable.alipay,
@@ -104,10 +108,10 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
                 cardImgae.setImageResource(R.drawable.card_01);
                 break;
             case 2:
-                cardImgae.setImageResource(R.drawable.card_03);
+                cardImgae.setImageResource(R.drawable.china_bank);
                 break;
             case 3:
-                cardImgae.setImageResource(R.drawable.card_04);
+                cardImgae.setImageResource(R.drawable.china_bank_02);
                 break;
             case 4:
                 cardImgae.setImageResource(R.drawable.card_05);
@@ -179,6 +183,8 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
                     break;
                 case 7:
                     itemHashMap.put("item_image",R.drawable.add_card_line);
+//                    itemHashMap.put("item_text", "ofo");
+//                    itemHashMap.put("choose_image",R.drawable.regards_choose_pay);
                     dataSourceList.add(itemHashMap);
                     break;
             }
@@ -248,6 +254,24 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
         DetailActivity.this.finish();
     }
     public void pay(View view){
+        payDialog = new Dialog(this,R.style.ActionSheetDialogStyle);
+        //填充对话框的布局
+        inflate = LayoutInflater.from(this).inflate(R.layout.payment_dialog, null);
+//        AlipayView alipayView = (AlipayView) inflate.findViewById(R.id.alipay_view);
+//        alipayView.setState(AlipayView.State.IDLE);
+
+        //将布局设置给Dialog
+        payDialog.setContentView(inflate);
+        //获取当前Activity所在的窗体
+        Window dialogWindow = payDialog.getWindow();
+        //设置Dialog从窗体底部弹出
+        dialogWindow.setGravity( Gravity.BOTTOM);
+        //获得窗体的属性
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.y = 20;//设置Dialog距离底部的距离
+//       将属性设置给窗体
+        dialogWindow.setAttributes(lp);
+        payDialog.show();//显示对话框
 //        startActivity(new Intent(DetailActivity.this,PayActivity.class));
     }
 }

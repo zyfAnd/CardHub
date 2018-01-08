@@ -26,7 +26,8 @@
             android:text="Address" />
         />
         <EditText
-            android:id="@+id/nameInfo"
+            android:focusable="false"
+            android:id="@+id/addressInfo"
             android:layout_below="@+id/ivPerson"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"

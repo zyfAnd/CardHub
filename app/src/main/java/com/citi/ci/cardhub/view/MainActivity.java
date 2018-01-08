@@ -67,30 +67,33 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
     public static Integer[] TEST_DATAS_temp = new Integer[]{
             R.drawable.card_02,
             R.drawable.card_01,
-            R.drawable.card_03,
+            R.drawable.china_bank,
+            R.drawable.china_bank_02,
             R.drawable.card_04,
-            R.drawable.card_05,
-            R.drawable.card_01,
-            R.drawable.card_02,
+            R.drawable.china_bank_03,
             R.drawable.card_03,
-            R.drawable.card_04,
-            R.drawable.card_05,
-            R.drawable.card_01,
-            R.drawable.card_02,
-            R.drawable.card_03,
-            R.drawable.card_04,
-            R.drawable.card_05,
-            R.drawable.card_01,
-            R.drawable.card_02,
-            R.drawable.card_03,
-            R.drawable.card_04,
-            R.drawable.card_05,
-            R.drawable.card_01,
-            R.drawable.card_02,
-            R.drawable.card_03,
-            R.drawable.card_04,
-            R.drawable.card_05,
-            R.drawable.card_01
+            R.drawable.card_05
+//            R.drawable.card_01,
+//            R.drawable.card_02,
+//            R.drawable.card_03,
+//            R.drawable.card_04,
+//            R.drawable.card_05,
+//            R.drawable.card_01,
+//            R.drawable.card_02,
+//            R.drawable.card_03,
+//            R.drawable.card_04,
+//            R.drawable.card_05,
+//            R.drawable.card_01,
+//            R.drawable.card_02,
+//            R.drawable.card_03,
+//            R.drawable.card_04,
+//            R.drawable.card_05,
+//            R.drawable.card_01,
+//            R.drawable.card_02,
+//            R.drawable.card_03,
+//            R.drawable.card_04,
+//            R.drawable.card_05,
+//            R.drawable.card_01
     };
     private CardStackView mStackView;
     private LinearLayout mActionButtonContainer;
@@ -266,7 +269,6 @@ public class MainActivity extends AppCompatActivity implements CardStackView.Ite
         chooseDialog.show();//显示对话框
     }
     public void repayment(View view){
-
         startActivity(new Intent(MainActivity.this,PayActivity.class));
         chooseDialog.dismiss();
     }

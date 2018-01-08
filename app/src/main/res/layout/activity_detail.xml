@@ -56,6 +56,11 @@
         android:paddingTop="10dp"
         android:verticalSpacing="15dip" >
     </com.citi.ci.cardhub.shake.DragGridView>
+    <!--<ImageView-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_width="40dip"-->
+        <!--android:layout_height="40dip"-->
+        <!--android:src="@drawable/add_card_line" />-->
 
     <TextView
         android:layout_marginBottom="20dp"

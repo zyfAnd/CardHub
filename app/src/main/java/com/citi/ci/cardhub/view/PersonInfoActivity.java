@@ -6,6 +6,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.citi.ci.cardhub.R;
 import com.citi.ci.cardhub.utils.StatusbarColorUtils;
@@ -13,6 +14,9 @@ import com.citi.ci.cardhub.utils.StatusbarColorUtils;
 
 public class PersonInfoActivity extends AppCompatActivity  {
 
+    private EditText edName;
+    private EditText edPhone;
+    private EditText edAddress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +28,33 @@ public class PersonInfoActivity extends AppCompatActivity  {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         setContentView(R.layout.activity_person_info);
+        initViews();
     }
 
     public void backHome(View view){
         PersonInfoActivity.this.finish();
     }
+//    public void updatePersonInfo(View view){
+//        startActivity(new Intent(PersonInfoActivity.this,UpdatePersonActivity.class));
+//    }
     public void updatePersonInfo(View view){
-        startActivity(new Intent(PersonInfoActivity.this,UpdatePersonActivity.class));
+//        startActivity(new Intent(PersonInfoActivity.this,BoundingCardActivity.class));
+        edName.setFocusable(true);
+        edName.setFocusableInTouchMode(true);
+        edName.requestFocus();
+        edAddress.setFocusable(true);
+        edAddress.setFocusableInTouchMode(true);
+        edAddress.requestFocus();
+        edPhone.setFocusable(true);
+        edPhone.setFocusableInTouchMode(true);
+        edPhone.requestFocus();
     }
-    public void update(View view){
-        startActivity(new Intent(PersonInfoActivity.this,BoundingCardActivity.class));
+    private void initViews(){
+        edName = (EditText) findViewById(R.id.nameInfo);
+        edAddress = (EditText) findViewById(R.id.addressInfo);
+        edPhone = (EditText) findViewById(R.id.phoneInfo);
+    }
+    public void save(View view){
+
     }
 }

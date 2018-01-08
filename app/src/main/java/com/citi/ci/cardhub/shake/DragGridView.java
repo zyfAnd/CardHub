@@ -214,7 +214,7 @@ public class DragGridView extends GridView implements OnClickListener {
 	/**
 	 * DragGridView自动滚动默认的速度
 	 */
-	private static final int speed = 20;
+	private static final int speed = 10;
 
 	/**
 	 * DragGridListener

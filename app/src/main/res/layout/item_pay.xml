@@ -6,10 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.lqm.roundview.RoundImageView
-        app:type="circle"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@drawable/logo_one"
         android:layout_margin="10dp"
-        android:src="@drawable/citi_logo"
         android:id="@+id/cardLogo"
         android:layout_width="50dp"
         android:layout_height="50dp" />
